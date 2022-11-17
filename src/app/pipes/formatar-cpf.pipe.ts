@@ -7,8 +7,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 export class FormatarCpfPipe implements PipeTransform {
 
-  transform(cpf: Number): String {
-    let cpfTransformado = cpf.toString();
+  transform(cpf: String): String {
+    let cpfTransformado = cpf;
     return cpfTransformado.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
   }
 }
