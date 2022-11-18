@@ -11,6 +11,7 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { FormatarTelefonePipe } from './pipes/formatar-telefone.pipe';
 import { FormatarCpfPipe } from './pipes/formatar-cpf.pipe';
+import { HttpClientModule } from '@angular/common/http';
 
 registerLocaleData(ptBr);
 
@@ -27,7 +28,8 @@ registerLocaleData(ptBr);
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt' },
