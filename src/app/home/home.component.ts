@@ -6,10 +6,11 @@ import { Cliente } from '../models/cliente';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+
+
 export class HomeComponent implements OnInit {
 
   constructor() { }
-  // ONDE FICARÁ O COMANDO DE BUSCAR A API!
 
   public cliente: Cliente = {} as Cliente
 
@@ -20,13 +21,13 @@ export class HomeComponent implements OnInit {
   ]
 
   ngOnInit(): void {
-    this.cliente
+    this.cliente = this.clientes[0];
   }
 
-  // ONDE SERÁ NECESSÁRIO ALTERAR PARA PEGAR OS INPUTS NOVOS DIRETAMENTE DA APLICAÇÃO
-
   clicou() {
-    let id = this.clientes.length + 1
+
+    let id = this.clientes.length + 1;
+    
     let novoCliente: Cliente = {
       id: id,
       nome: this.cliente.nome,
@@ -38,7 +39,5 @@ export class HomeComponent implements OnInit {
     } as Cliente
 
     this.clientes.push(novoCliente)
-
   }
-
 }
