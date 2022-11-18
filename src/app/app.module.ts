@@ -36,6 +36,8 @@ registerLocaleData(ptBr);
       useValue: 'BRL',
     },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }
