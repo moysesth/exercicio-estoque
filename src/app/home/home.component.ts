@@ -21,13 +21,12 @@ export class HomeComponent implements OnInit {
   ]
 
   ngOnInit(): void {
-    this.cliente = this.clientes[0];
   }
 
   clicou() {
 
     let id = this.clientes.length + 1;
-    
+
     let novoCliente: Cliente = {
       id: id,
       nome: this.cliente.nome,
