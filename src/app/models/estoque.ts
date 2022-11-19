@@ -1,4 +1,4 @@
-export interface Cliente {
+export interface Estoque {
     id: Number;
     nome: String;
     descricao: String;
