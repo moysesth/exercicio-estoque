@@ -62,22 +62,31 @@ export class HomeComponent implements OnInit {
   }
 
 
-  exibirLista() {
-
-    this.exibirEstoque = this.exibirEstoque ? false : true;
-
+  showAdd() {
+    this.exibirEstoque = this.exibirEstoque ? false : false;
+    this.exibirAdd = this.exibirAdd ? false : true;
+    this.exibirEdit = this.exibirEdit ? false : false;
+    this.exibirDelet = this.exibirDelet ? false : false;
   }
 
-  showAdd() {
-    this.exibirAdd = this.exibirAdd ? false : true;
+  showLista() {
+    this.exibirEstoque = this.exibirEstoque ? false : true;
+    this.exibirAdd = this.exibirAdd ? false : false;
+    this.exibirEdit = this.exibirEdit ? false : false;
+    this.exibirDelet = this.exibirDelet ? false : false;
   }
 
   showEdit() {
-    this.exibirEdit = this.exibirEdit ? false : true;
     this.exibirEstoque = this.exibirEstoque ? false : true;
+    this.exibirAdd = this.exibirAdd ? false : false;
+    this.exibirEdit = this.exibirEdit ? false : true;
+    this.exibirDelet = this.exibirDelet ? false : false;
   }
 
   showDelet() {
+    this.exibirEstoque = this.exibirEstoque ? false : false;
+    this.exibirAdd = this.exibirAdd ? false : false;
+    this.exibirEdit = this.exibirEdit ? false : false;
     this.exibirDelet = this.exibirDelet ? false : true;
   }
 }

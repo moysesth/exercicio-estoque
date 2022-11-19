@@ -18,11 +18,11 @@
 </header>
 
 <section class="page-section" id="buttons">
-    <div class="botoes text-center">
-        <button class="addButton" type="submit" (click)="showAdd()"> Adicionar Item </button>
-        <button class="showButton" type="submit" (click)="exibirLista()"> Mostrar Lista </button>
-        <button class="editButton" type="submit" (click)="showEdit()"> Editar Item </button>
-        <button class="deletButton" type="submit" (click)="showDelet()"> Deletar Item </button>
+    <div class="buttons-spacing">
+        <button class="btn btn-primary buttons-spacing" type="submit" (click)="showAdd()"> Adicionar Item </button>
+        <button class="btn btn-primary buttons-spacing" type="submit" (click)="showLista()"> Mostrar Lista </button>
+        <button class="btn btn-primary buttons-spacing" type="submit" (click)="showEdit()"> Editar Item </button>
+        <button class="btn btn-primary buttons-spacing" type="submit" (click)="showDelet()"> Deletar Item </button>
     </div>
 </section>
 
@@ -74,42 +74,104 @@
     </div>
 </section>
 
+<section *ngIf="exibirEdit == true" id="editar">
+    <div class="container">
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">EDITAR ITEM</h2>
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><svg class="svg-inline--fa fa-star" aria-hidden="true" focusable="false"
+                    data-prefix="fas" data-icon="star" role="img" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 576 512" data-fa-i2svg="">
+                    <path fill="currentColor"
+                        d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z">
+                    </path>
+                </svg>
+            </div>
+            <div class="divider-custom-line"></div>
+        </div>
+
+        <!-- <table class="table">
+            <tbody>
+                <tr scope="colgroup">
+                    <td>Editar ID</td>
+                    <td scope="col">Editar nome</td>
+                    <td scope="col">Editar descrição</td>
+                    <td scope="col">Editar preço</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr *ngFor="let estoque of arrayLista">
+                    <th scope="row">{{estoque.id}}</th>
+                    <td>{{estoque.nome}}</td>
+                    <td>{{estoque.descricao}}</td>
+                    <td>{{estoque.preco.toString() | currency }}</td>
+                </tr>
+            </tbody>
+        </table> -->
+        
+        <h2>Edite um item</h2>
+        <input type="number" [(ngModel)]="editId" name="editId">
+        <p>Editar id</p>
+        <input type="text" [(ngModel)]="editNome" name="editNome">
+        <p>Editar Nome</p>
+        <input type="text" [(ngModel)]="editDescricao" name="editDescricao">
+        <p>Editar descricao</p>
+        <input type="number" [(ngModel)]="editPreco" name="editPreco">
+        <p>Editar preco</p>
+        <button type="submit" (click)="editItem(editId,editNome,editDescricao,editPreco)"> Editar </button>
+    </div>
+</section>
 
 <section *ngIf="exibirEstoque == true" id="listar">
-    <h2 >Estoque</h2>
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Descrição</th>
-                <th scope="col">Preço</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let estoque of arrayLista">
-                <th scope="row">{{estoque.id}}</th>
-                <td>{{estoque.nome}}</td>
-                <td>{{estoque.descricao}}</td>
-                <td>{{estoque.preco.toString() | currency }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="container">
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">ESTOQUE</h2>
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><svg class="svg-inline--fa fa-star" aria-hidden="true" focusable="false"
+                    data-prefix="fas" data-icon="star" role="img" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 576 512" data-fa-i2svg="">
+                    <path fill="currentColor"
+                        d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z">
+                    </path>
+                </svg>
+            </div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Descrição</th>
+                    <th scope="col">Preço</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let estoque of arrayLista">
+                    <th scope="row">{{estoque.id}}</th>
+                    <td>{{estoque.nome}}</td>
+                    <td>{{estoque.descricao}}</td>
+                    <td>{{estoque.preco.toString() | currency }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </section>
 
-<section  *ngIf="exibirEdit == true" id="editar">
-    <h2>Edite um item</h2>
-    <input type="number" [(ngModel)]="editId" name="editId">
-    <p>Editar id</p>
-    <input type="text" [(ngModel)]="editNome" name="editNome">
-    <p>Editar Nome</p>
-    <input type="text" [(ngModel)]="editDescricao" name="editDescricao">
-    <p>Editar descricao</p>
-    <input type="number" [(ngModel)]="editPreco" name="editPreco">
-    <p>Editar preco</p>
-    <button type="submit" (click)="editItem(editId,editNome,editDescricao,editPreco)"> Editar </button>
-</section>
-
-<section  *ngIf="exibirDelet == true" id="editar">
-    <h2>Deletar</h2>
+<section *ngIf="exibirDelet == true" id="deletar">
+    <div class="container">
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">DELETAR ITEM</h2>
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><svg class="svg-inline--fa fa-star" aria-hidden="true" focusable="false"
+                    data-prefix="fas" data-icon="star" role="img" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 576 512" data-fa-i2svg="">
+                    <path fill="currentColor"
+                        d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z">
+                    </path>
+                </svg>
+            </div>
+            <div class="divider-custom-line"></div>
+        </div>
+    </div>
 </section>
