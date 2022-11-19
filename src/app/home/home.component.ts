@@ -24,6 +24,8 @@ export class HomeComponent implements OnInit {
   editDescricao: string = ''
   editPreco: number = 0
 
+  deletId: number = 0
+
   id: number = 0
   nome: string = ''
   descricao: string = ''
@@ -55,10 +57,11 @@ export class HomeComponent implements OnInit {
     if (this.arrayLista[id].preco) { if (editItem?.preco) { editItem.preco = preco } }
   }
 
-  deletItem() {
+  deletItem(id: number) {
     this.arrayLista.pop()
-    this.contId--
-    console.log(this.arrayLista)
+    let deletItem = this.arrayLista.find(x => x.id == id)
+    if (this.arrayLista[id].id, delete this.arrayLista[this.contId])
+    if (this.arrayLista[id].id) { if (deletItem?.id) { deletItem.id = id } }
   }
 
 
@@ -84,7 +87,7 @@ export class HomeComponent implements OnInit {
   }
 
   showDelet() {
-    this.exibirEstoque = this.exibirEstoque ? false : false;
+    this.exibirEstoque = this.exibirEstoque ? false : true;
     this.exibirAdd = this.exibirAdd ? false : false;
     this.exibirEdit = this.exibirEdit ? false : false;
     this.exibirDelet = this.exibirDelet ? false : true;
