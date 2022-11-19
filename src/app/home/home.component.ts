@@ -1,4 +1,6 @@
+import { formatCurrency } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { resetFakeAsyncZone } from '@angular/core/testing';
 import { Cliente } from '../models/cliente';
 
 @Component({
@@ -9,15 +11,16 @@ import { Cliente } from '../models/cliente';
 
 
 export class HomeComponent implements OnInit {
+  contactForm: any;
 
   constructor() { }
 
   public cliente: Cliente = {} as Cliente
 
   public clientes: Cliente[] = [
-    { id: 1, nome: "Leandro", telefone: 15993110130, endereco: "Rua teste 123", data: new Date(), valor: 33.45, cpf: "54717284321" },
-    { id: 2, nome: "Marcia", telefone: 12968241823, endereco: "Rua av 123", data: new Date(), valor: 4533, cpf: "74459885301" },
-    { id: 3, nome: "Livinia", telefone: 14968421256, endereco: "Rua florida 123", data: new Date(), valor: 1269.03, cpf: "54802121687" }
+    { id: 1, nome: "Bicicleta", descricao: "Bicicleta aro 26", preco: 1674.45 },
+    { id: 2, nome: "Patinete", descricao: "Patinete motorizado", preco: 3529.99 },
+    { id: 3, nome: "Patins", descricao: "Patins roller oldschool", preco: 399.99 }
   ]
 
   ngOnInit(): void {
@@ -30,13 +33,11 @@ export class HomeComponent implements OnInit {
     let novoCliente: Cliente = {
       id: id,
       nome: this.cliente.nome,
-      cpf: this.cliente.cpf,
-      telefone: this.cliente.telefone,
-      endereco: this.cliente.endereco,
-      data: new Date(),
-      valor: this.cliente.valor,
+      descricao: this.cliente.descricao,
+      preco: this.cliente.preco,
     } as Cliente
 
     this.clientes.push(novoCliente)
+  
   }
 }
