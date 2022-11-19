@@ -74,6 +74,7 @@ export class HomeComponent implements OnInit {
 
   showEdit() {
     this.exibirEdit = this.exibirEdit ? false : true;
+    this.exibirEstoque = this.exibirEstoque ? false : true;
   }
 
   showDelet() {
