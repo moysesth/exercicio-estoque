@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Estoque } from '../models/estoque';
+import { Estoque } from '../models/estoque.interface';
 
 @Component({
   selector: 'app-home',
