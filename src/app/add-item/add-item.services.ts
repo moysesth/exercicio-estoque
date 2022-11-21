@@ -16,10 +16,6 @@ export class AddItemService {
   ) { }
 
   addEstoque() {
-    id = 
-    const nome = document.getElementById("nome")
-
-
     return this.http.post<Estoque[]>(`${this.API_URL}/estoque`, {
     });
   }

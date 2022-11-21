@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  API_URL: 'https://my-json-server.typicode.com/moysesth/fake-api-estoque',
+  API_URL: 'https://my-json-server.typicode.com/moysesth/exercicio-estoque',
 };
 
 /*

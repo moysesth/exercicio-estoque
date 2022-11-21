@@ -17,6 +17,12 @@
     "nome": "Patins",
     "descricao": "Patins roller oldschool",
     "preco": 399.99
+        },
+        {
+    "id": 4,
+    "nome": "Skate",
+    "descricao": "Skate shape profissional",
+    "preco": 650.49
         }
     ]
 }
