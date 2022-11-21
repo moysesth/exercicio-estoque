@@ -2,11 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Estoque } from '../models/estoque.interface';
+import { AddItemComponent } from './add-item.component';
 
 @Injectable({
   providedIn: 'root'
 })
-export class EstoqueService {
+export class AddItemService {
 
   API_URL = environment.API_URL
 
@@ -14,11 +15,12 @@ export class EstoqueService {
     private http: HttpClient,
   ) { }
 
-  getEstoque(pagina: number) {
-    return this.http.get<Estoque[]>(`${this.API_URL}/estoque`, {
-      params: {
-        _page: String(pagina),
-      }
+  addEstoque() {
+    id = 
+    const nome = document.getElementById("nome")
+
+
+    return this.http.post<Estoque[]>(`${this.API_URL}/estoque`, {
     });
   }
 }

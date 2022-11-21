@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { FormatarTelefonePipe } from './pipes/formatar-telefone.pipe';
 import { FormatarCpfPipe } from './pipes/formatar-cpf.pipe';
 import { EstoqueComponent } from './estoque/estoque.component';
+import { AddItemComponent } from './add-item/add-item.component';
 
 registerLocaleData(ptBr);
 
@@ -24,7 +25,8 @@ registerLocaleData(ptBr);
     HomeComponent,
     FormatarTelefonePipe,
     FormatarCpfPipe,
-    EstoqueComponent
+    EstoqueComponent,
+    AddItemComponent
   ],
 
   imports: [

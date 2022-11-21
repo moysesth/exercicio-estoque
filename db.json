@@ -1,0 +1,22 @@
+{
+    "estoque": [
+        {
+    "id": 1,
+    "nome": "Bicicleta",
+    "descricao": "Bicicleta aro 26",
+    "preco": 1674.45
+        },
+        {
+    "id": 2,
+    "nome": "Patinete",
+    "descricao": "Patinete motorizado",
+    "preco": 3529.99
+        },
+        {
+    "id": 3,
+    "nome": "Patins",
+    "descricao": "Patins roller oldschool",
+    "preco": 399.99
+        }
+    ]
+}

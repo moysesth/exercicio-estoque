@@ -1,4 +1,4 @@
-<section id="listar">
+<section class="page-section text-center" id="listar">
     <hr>
     <div class="container">
         <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">ESTOQUE</h2>
@@ -14,7 +14,25 @@
             </div>
             <div class="divider-custom-line"></div>
         </div>
-        <table class="table">
+
+        <!-- Se a base ficar maior, e precisar de botões para mostrar a prox. pag -->
+        <!-- <div class="buttons-spacing">
+            <button (click)="paginaAnterior()" [disabled]="pagina === 1" class="btn btn-primary buttons-spacing">Pagina
+                Anterior</button>
+            <button (click)="proximaPagina()" class="btn btn-primary buttons-spacing">Proxima Pagina</button>
+            <p>Página atual: {{pagina}}</p>
+            <br>
+        </div> -->
+        
+        <div class="spinner-border text-primary" role="status" *ngIf="estaCarregando">
+            <span class="sr-only">Carregando...</span>
+        </div>
+
+        <!-- <div *nfIf="erroCarregamento">
+            <h2>Deu erro no estoque :(</h2>
+        </div> -->
+
+        <table class="table" *ngIf="!estaCarregando && !erroCarregamento">
             <thead>
                 <tr>
                     <th scope="col">ID</th>

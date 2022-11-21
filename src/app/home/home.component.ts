@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Estoque } from '../models/estoque.interface';
+import { AddItemComponent } from '../add-item/add-item.component';
+
 
 @Component({
   selector: 'app-home',
@@ -42,11 +44,11 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addItem(id: number, nome: string, descricao: string, preco: number) {
-    let addEstoque = { id: id, nome: nome, descricao: descricao, preco: preco }
-    this.arrayLista.push(addEstoque)
-    this.contId++
-  }
+  // addItem(id: number, nome: string, descricao: string, preco: number) {
+  //   let addEstoque = { id: id, nome: nome, descricao: descricao, preco: preco }
+  //   this.arrayLista.push(addEstoque)
+  //   this.contId++
+  // }
 
   editItem(id: number, nome: string, descricao: string, preco: number) {
     let editItem = this.arrayLista.find(x => x.id == id)
